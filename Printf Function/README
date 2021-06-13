@@ -1,0 +1,27 @@
+README
+
+	I) Am construit functia convert ce imi va converti argumentele date in string-uri,
+in baza 10(%d) sau in baza 16(%x).
+	- Daca numarul primit ca parametru pentru aceasta functie este negativ, vom avea 2 cazuri:
+			1. daca numarul trebuie lasat in baza 10, atunci il vom inmulti cu -1, si 
+		vom adauga ulterior semnul '-' la finalul string-ului ce va reprezenta oglinditul 
+		numarului dat;
+			2. daca numarul trebuie transformat in baza 16, atunci vom avem avea nevoie de
+		complementul lui in hexadecimal: celui mai mare numar care se poate scrie in baza 16
+		pe 8 biti ii adaugam numarul nostru negativ, dar si 1;
+	- Adaugam caracterul null la finalul "oglinditului" si facem reverse string-ului.
+
+	II) In functia iocla_printf, parcurgem stringul dat ca parametru si argumentele date si 
+luam cazurile in care avem de afisat atunci cand dam de un caracter '%', retinand numarul 
+de bytes ce au fost scrisi, si afisand cu ajutorul functiei write_stdout:
+			1. un int(%d);
+			2. un unsigned int(%u);
+			3. un int in hexadecimal(%x);
+			4. un caracter(%c);
+			5. un string(%s);
+			6. cazul in care caracterul '%' este urmat de un altul;
+		- Daca, caracterul nu este unul "special" (unul din cazurile de mai sus), adaugam
+	1 la numarul de bytes scrisi si printam cu ajutorul functiei write_stdout.
+		- La final, returnam numarul de bytes scrisi.
+
+ ! Functia convert este inspirata din implementarea unei functii itoa de pe https://www.geeksforgeeks.org/implement-itoa/

@@ -1,0 +1,59 @@
+README
+
+One Time Pad:
+    - am parcurs caracter cu caracter atat textul initial, cat si cheia;
+    - deoarece au aceeasi lungime ma mutam simultan pe urmatorul caracter;
+    - dupa fiecare mutare am facut operatia xor intre caracterul din text si cel 
+    din cheie, adaugandu-l pn pozitia corespunzatoare din ciphertext.
+
+Caesar Cipher:
+    - am parcurs textul caracter cu caracter, verificand pe ce fel de caracter ma
+     alfu;
+    - in cazul unui caracter ce nu era litera, l-am adaugat direct pe pozitia 
+    corespunzatoare din ciphertext;
+    - daca era litera, deplasam circular folosind cheia;
+    - daca dupa folosirea cheii, se dapasea ultima litera a aflabetului, 'z' sau 'Z',
+    ma intorceam la inceputul alfabetului pana cand nu mai existau probleme si 
+    adaugam in ciphertext.
+
+ Vigenere Cipher:
+    - am ales sa nu extind cheia si sa ma misc circular pe ea in functie de numarul
+    de litere parcuse in text (daca ma aflu pe caracterul 5 si am gasit 3 litere, 
+    atunci voi cripta cu al 3-lea caracter din cheie);
+    - am parcurs textul, daca nu ma aflam pe o litera mutam direct in ciphertext;
+    - in cazul in care numarul de litere gasite nu depasea lungimea cheii, criptam 
+    direct, daca nu ma deplasam circular pe cheie;
+    - daca dupa adaugarea cheii caracterul depasea ultima litera a alfabetului ma 
+    deplasam circular intorcandu-ma la inceputul alfabetului (repet pana nu mai exista
+    probleme);
+    - la sfarsit adaug caracterul criptat in ciphertext.
+
+StrStr:
+    - m-am situat pe primul caracter din needle si am inceput sa parcurg haystack;
+    - daca cele 2 caractere erau identice, ma mutam atat pe urmatorul din haystack, 
+    cat si pe cel din needle, retinand numarul de caractere gasite identice si pozitia 
+    pe care ma aflu in haystack;
+    - daca se ajungea la sfarsitul needle-ului, numarul de caractere din needle era 
+    egal cu numarul de caractere parcurse corect, atunci pozitia prima aparitii era 
+    reprezentata de diferenta dintre pozitia caracterului pe care ma aflam in haystack 
+    si numarul de caractere corecte/ lungimea needle-ului;
+    - in cazul in care se ajunge la sfarsitul haystack-ului si nu s-a gasit nicio 
+    aparitie a needle-ului se va returna lungimea haystack-ului + 1.
+
+Binary to Hexadecimal:
+    - impart numarul de caractere din bin_sequence la 4 pentru a vedea de cate 
+    caractere este nevoie in stringul ce reprezinta numarul in hexadecimal, daca 
+    restul impartirii este mai mare decat 0 atunci mai este nevoie de inca un caracter;
+    - am parcurs secventa in binar de la coada tratand caracterele ca seturi de cate
+    4 "biti", si contorizand pe al catelea "bit" din set ma aflu;
+    - daca, caracterul pe care ma aflu este 1, atunci in valoarea setului (un int) 
+    adaug valoarea corespunzatoare pozitiei din set ( 2 ^ 0 pt pozitia 1, 2 ^ 1 pt
+    pozitia 2, 2 ^ 2 pt pozitia 3, 2 ^ 3 pt pozitia 4);
+    - cand se ajunge la finalul fiecarui "set" valoarea corespunzatoare acestuia 
+    este convertita intr-un caracter ce reprezinta valoarea in baza 16;
+    - caracterele convertite sunt adaugate in secventa in hexa de la coada la inceput;
+    - la sfarsit la finalul lui hexa_value este adaugat "newline".
+
+
+
+
